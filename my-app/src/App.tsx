@@ -1,5 +1,13 @@
-import ListGroup from "./components/listGroup";
+import ListGroup from "./components/ListGroup";
 import Alerts from "./components/Alerts";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
+import Inspiration from "./pages/Inspiration";
+import Music from "./pages/Music";
+import Merch from "./pages/Merch";
+import "./App.css"; 
+
 
 function App() {
   const items = ["About", "Inspirations", "Music", "Merch"]; 
@@ -9,10 +17,17 @@ function App() {
   
   return (
   <div>
-    <ListGroup items={items} heading="ListOptions" onSelectItem={handleSelectItem} />
-    <Alerts>
-      Hello <span> World</span>
-      </Alerts> 
+    <BrowserRouter>
+      <NavBar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home/>} /> 
+          <Route path="/inspiration" element={<Inspiration/>} /> 
+          <Route path="/music" element={<Music/>} /> 
+          <Route path="/merch" element={<Merch/>} /> 
+        </Routes>
+      </div>
+    </BrowserRouter>
   </div>
   );
 }

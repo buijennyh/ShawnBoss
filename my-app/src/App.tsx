@@ -19,6 +19,7 @@ function App() {
   <div>
     <BrowserRouter>
       <NavBar />
+      {/* Embedding YouTube video with video ID */}
       <div>
         <Routes>
           <Route path="/" element={<Home/>} /> 
@@ -28,6 +29,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    
   </div>
   );
 }

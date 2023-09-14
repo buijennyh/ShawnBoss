@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+import ErrorBoundary from './components/ErrorBoundary'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ErrorBoundary from './components/ErrorBoundary';
 
 const router = createBrowserRouter([
   {
